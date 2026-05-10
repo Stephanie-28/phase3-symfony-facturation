@@ -18,7 +18,12 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="flex">
+        {# base.html.twig #}
+        {% include 'components/Sidebar.html.twig' %}
+        <main class="bg-blue-300 flex-1 p-8">
+        {% block body %}
+        {% endblock %}
+        </main>
     </body>
 </html>

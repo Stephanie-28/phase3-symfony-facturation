@@ -1,0 +1,45 @@
+<aside class="w-64 min-h-screen bg-white shadow-sm px-4 py-6 flex flex-col">
+    <div class="text-blue-600 font-bold text-xl mb-8 px-4">FacturSaaS</div>
+
+    <nav class="space-y-1 flex-1">
+        <a
+            href="{{ path('app_dashboard') }}"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100"
+        >
+            Dashboard
+        </a>
+        <a
+            href="#"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100"
+        >
+            Factures
+        </a>
+        <a
+            href="#"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100"
+        >
+            Clients
+        </a>
+        <a
+            href="#"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100"
+        >
+            Produits
+        </a>
+        <a
+            href="{{ path('app_profil') }}"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-blue-600 bg-blue-50"
+        >
+            Profil
+        </a>
+    </nav>
+
+    <div class="mt-auto">
+        <a
+            href="{{ path('app_logout') }}"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-red-500 hover:bg-red-50"
+        >
+            Déconnexion
+        </a>
+    </div>
+</aside>
