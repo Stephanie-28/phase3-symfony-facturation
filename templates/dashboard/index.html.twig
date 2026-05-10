@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello DashboardController!{% endblock %}
+{% block body %}
+
+<div class="bg-blue-300 p-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+  {# Cartes stats #}
+    <section class="grid grid-cols-4 gap-4 mb-8">
+        <a href="#" class="bg-white rounded-2xl shadow-sm p-6">
+            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <span class="text-green-600 text-lg">€</span>
+            </div>
+                <p class="text-sm text-gray-500 mb-1">Chiffre d'affaires (Payé)</p>
+                <strong class="text-2xl font-bold text-gray-900">2 250 €</strong>
+        </a>
+        <a href="#" class="bg-white rounded-2xl shadow-sm p-6">
+            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                <span class="text-orange-500 text-lg">🧾</span>
+            </div>
+                <p class="text-sm text-gray-500 mb-1">Factures en attente de paiement</p>
+                <strong class="text-2xl font-bold text-gray-900">1</strong>
+        </a>
+        <a href="#" class="bg-white rounded-2xl shadow-sm p-6">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                <span class="text-blue-500 text-lg">👥</span>
+            </div>
+                <p class="text-sm text-gray-500 mb-1">Total Clients</p>
+                <strong class="text-2xl font-bold text-gray-900">2</strong>
+        </a>
+        <a href="#" class="bg-white rounded-2xl shadow-sm p-6">
+            <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <span class="text-purple-500 text-lg">📦</span>
+            </div>
+            <p class="text-sm text-gray-500 mb-1">Total Produits</p>
+            <strong class="text-2xl font-bold text-gray-900">3</strong>
+        </a>
+    </section>
+    <h3 class="text-1xl font-bold text-gray-900 mb-6">Chiffre d'affaires mensuel (Factures payées)</h3>
+    <section class="grid grid-cols-3 gap-4">
+        <a href="#" class="bg-blue-50 border border-blue-100 rounded-2xl p-6 flex items-center justify-between hover:bg-blue-100 transition-colors">
+            <div>
+                <strong class="block text-blue-700 font-bold mb-1">Créer une facture</strong>
+                <p class="text-sm text-blue-500">Nouvelle prestation</p>
+            </div>
+            <span class="text-blue-400 text-xl">→</span>
+        </a>
+        <a href="#" class="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
+            <div>
+                <strong class="block text-gray-900 font-bold mb-1">Ajouter un client</strong>
+                <p class="text-sm text-gray-500">Gérer le répertoire</p>
+            </div>
+            <span class="text-gray-400 text-xl">→</span>
+        </a>
+        <a href="#" class="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
+            <div>
+                <strong class="block text-gray-900 font-bold mb-1">Créer un produit / service</strong>
+                <p class="text-sm text-gray-500">Enrichir le catalogue pour rediger rapidement vos factures</p>
+            </div>
+            <span class="text-gray-400 text-xl">→</span>
+        </a>
+        <a href="#" class="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
+            <div>
+                <strong class="block text-gray-900 font-bold mb-1">Relancer tous les clients</strong>
+                <p class="text-sm text-gray-500">Envoyer un mail à tout les clients en retard de paiement</p>
+            </div>
+            <span class="text-gray-400 text-xl">→</span>
+        </a>
+    </section>
+</div>
+{% endblock %}
