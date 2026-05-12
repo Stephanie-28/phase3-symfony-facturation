@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block title %}Produits & Services{% endblock %}
+{% block body %}
+
+<div class="p-8">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-bold text-gray-900">Produits & Services</h1>
+    <a href="{{ path('app_product_new') }}" class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors">
+      + Ajouter un produit
+    </a>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+    <table class="w-full">
+      <thead>
+        <tr class="border-b border-gray-100">
+          <th class="text-left text-sm font-semibold text-gray-700 px-6 py-4">Nom</th>
+          <th class="text-left text-sm font-semibold text-gray-700 px-6 py-4">Description</th>
+          <th class="text-left text-sm font-semibold text-gray-700 px-6 py-4">Prix unitaire</th>
+          <th class="text-left text-sm font-semibold text-gray-700 px-6 py-4">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+          <td class="px-6 py-4 text-sm text-gray-900">{{ product.name }}</td>
+          <td class="px-6 py-4 text-sm text-gray-500">{{ product.description }}</td>
+          <td class="px-6 py-4 text-sm text-gray-900">{{ product.price }} € / {{ product.Unit.value }}</td>
+          <td class="px-6 py-4">
+            <div class="flex items-center gap-3">
+              <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="text-blue-400 hover:text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 012.828 2.828L11.828 15.828a2 2 0 01-1.414.586H9v-1.414a2 2 0 01.586-1.414z"/>
+                </svg>
+              </a>
+              <a href="{{ path('app_product_show', {'id': product.id}) }}" class="text-red-400 hover:text-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0a1 1 0 00-1-1h-4a1 1 0 00-1 1H5"/>
+                </svg>
+              </a>
+            </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="4" class="px-6 py-8 text-center text-sm text-gray-400">Aucun produit pour le moment.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
