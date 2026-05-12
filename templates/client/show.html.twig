@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}Client{% endblock %}
+{% block body %}
+
+<div class="p-8 max-w-2xl mx-auto">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Client</h1>
+
+  <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+    <table class="w-full">
+      <tbody>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4 w-1/3">Id</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.id }}</td>
+        </tr>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">Nom</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.name }}</td>
+        </tr>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">Email</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.email }}</td>
+        </tr>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">Téléphone</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.phone }}</td>
+        </tr>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">Adresse</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.adresse }}</td>
+        </tr>
+        <tr class="border-b border-gray-50">
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">SIRET</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.siret }}</td>
+        </tr>
+        <tr>
+          <th class="text-left text-sm font-semibold text-gray-500 px-6 py-4">RIB</th>
+          <td class="text-sm text-gray-900 px-6 py-4">{{ client.rib }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <a href="{{ path('app_client_index') }}"
+      class="px-5 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+      ← Retour à la liste
+    </a>
+
+    {{ include('client/_delete_form.html.twig') }}
+  </div>
+</div>
+
+{% endblock %}
